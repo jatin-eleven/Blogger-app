@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+{% block title %} Account Settings {% endblock title %}
+
+
+{% block body %}
+
+
+<br>
+<br>
+
+<div class="acc-container">    
+    <h1 class="acch2">Account Settings</h1>
+
+    <div class="card text-dark bg-light mb-3" style="width: auto; margin: auto 20px; border-radius: 0 !important; border: none;">
+        <div class="card-header" style=" font-size: 20px;  background-color: rgb(206, 206, 206);">
+           <b> My Details </b>
+        </div>
+        <div class="card-body" style="background-color: rgb(230, 230, 230);">
+          <h5 class="card-title">
+            Name
+          </h5>
+          <p class="card-text"> {{name}} </p>
+          <hr>
+          <h5 class="card-title">
+              Gender
+            </h5>
+            <p class="card-text">{{gender}}</p>
+            <hr>
+            <h5 class="card-title">
+                Username  
+            </h5>
+            <p class="card-text"> {{email}} </p>
+            <hr>
+            <h5 class="card-title">
+                UID  
+            </h5>
+            <p class="card-text">{{uid}}</p>
+            <hr>
+            <h5 class="card-title">
+                Account type
+            </h5>
+            <p class="card-text">Normal</p>
+            <hr>
+            <a onclick="togglePopup2()" class="btn btn-dark" style="margin-bottom:0px !important; font-size: 18px !important;">
+                Update info
+            </a>
+
+
+            
+
+        </div>
+    </div>
+    <br>
+
+
+
+    
+
+    <div class="card text-dark bg-light mb-3" style="width: auto; margin: auto 20px; border-radius: 0 !important; border: none;">
+        <div class="card-header" style=" font-size: 20px;  background-color: rgb(206, 206, 206) ;">
+           <b> My Details </b>
+        </div>
+        <div class="card-body" style="background-color: rgb(230, 230, 230);">
+            <h5 class="card-title">
+                Username  
+            </h5>
+            <p class="card-text"> {{email}} </p>
+            <hr>
+            <h5 class="card-title">
+                UID  
+            </h5>
+            <p class="card-text">{{uid}}</p>
+            <hr>
+            <h5 class="card-title">
+                Account type
+            </h5>
+            <p class="card-text">Normal</p>
+            <hr>
+            <a href="" class="btn btn-dark" style="margin-bottom:0px !important; font-size: 18px !important;">
+                Update info
+            </a>
+        </div>
+    </div>
+    <br>
+
+    <div class="card text-dark bg-light mb-3" style="width: auto; margin: auto 20px; border-radius: 0 !important; border: none;">
+        <div class="card-header" style=" font-size: 20px;  background-color: rgb(206, 206, 206) ;">
+           <b> My Details </b>
+        </div>
+        <div class="card-body" style="background-color: rgb(230, 230, 230);">
+          <h5 class="card-title">
+            Name
+          </h5>
+          <p class="card-text">{{name}}</p>
+          <hr>
+          <h5 class="card-title">
+              Gender
+            </h5>
+            <p class="card-text">{{gender}}</p>
+            
+            <hr>
+            <a href="" class="btn btn-dark" style="margin-bottom:0px !important; font-size: 18px !important;">
+                Update info
+            </a>
+        </div>
+    </div>
+    <br>
+
+
+
+
+
+
+
+
+<!-- 
+    <div class="btndiv">
+        <button type="submit" class="btn btn-dark">Update Details</button>
+    </div>
+ -->
+
+</div>
+
+
+
+
+
+
+<script>
+    function togglePopup2(){
+        document.getElementById("popup-2").classList.toggle("active");
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+crossorigin="anonymous"></script>
+
+<!-- for toggle switch -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+{% endblock body %}
+
+

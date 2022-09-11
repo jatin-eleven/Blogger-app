@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% block title %} Sign Up {% endblock %}
+
+{% block body %}
+
+
+<br>
+<br>
+<br>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+{% if category == "error" %}
+<div class="alert alert-danger alter-dismissable fade show" role="alert">
+    {{ message }}
+    <button type="button" class="close flashclose" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% else %}
+<div class="alert alert-success alter-dismissable fade show" role="alert">
+    {{ message }}
+    <button type="button" class="close flashclose" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+
+<div class="container my-3">
+    <form method="POST">
+    <h3 class="signuph2">Become a member</h3>
+    <div class="form-group">
+        <label for="name">Full Name</label>
+        <input 
+        type="name" 
+        class="form-control my-2" 
+        id="name" 
+        name="name" 
+        placeholder="enter name"/>
+    </div>
+    <div class="form-group">
+        <label for="email">Gender</label>
+        <select class="form-select form-control my-2" aria-label="Default select example" name="gender">
+            <option selected>Select a Gender</option>
+            <option value="LGBTQ">LGBTQ+</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+            type="email" 
+            class="form-control my-2" 
+            id="email" 
+            name="email" 
+            placeholder="enter email"/>
+    </div>
+    <div class="form-group my-3">
+        <label for="password">Create Password</label>
+        <input 
+            type="password" 
+            class="form-control my-2" 
+            id="password" 
+            name="password" 
+            placeholder="enter password"/>
+    </div>
+
+
+    
+
+    <p class="accordionp">More Information</p>
+    <div class="accordion accordionsignup" id="accordionExample">
+        
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed accordion-item11" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Additional Information
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body accordion-bodysignup">
+                <!-- <form method="POST"> -->
+                    <div class="form-groupsignup form-groupsignup1">
+                        <label for="name">Phone Number</label>
+                        <input 
+                        type="number" 
+                        class="form-control my-2signup" 
+                        id="email" 
+                        name="phone" 
+                        placeholder="enter phone number"/>
+                    </div>
+
+                    <div class="form-groupsignup">
+                        <label for="name">Zip Code</label>
+                        <input 
+                        type="number" 
+                        class="form-control my-2signup" 
+                        id="email" 
+                        name="pin" 
+                        placeholder="enter zip code"/>
+                    </div>
+
+                <!-- </form> -->
+              </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="form-check form-group" >
+        <input class="form-check-input" type="checkbox" value="checked" id="flexCheckDefault" name="check">
+        <label class="form-check-label" for="flexCheckDefault">
+          Accept terms and conditions
+        </label>
+    </div>
+
+    <div class="btndiv">
+        <button type="submit" name="submit" value="signup" class="btn btn-dark">Become a member</button>
+    </div>
+    
+    <div class="btndiv">
+        <a href="login" class="btn btn-outline-dark"><b>Already a member </b></a>
+    </div>
+
+    <div class="infodiv">
+        <a class="infomsg" href="login">Membership info</a>
+    </div>
+    
+</form>
+</div>
+
+    
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+crossorigin="anonymous"></script>
+
+<!-- for toggle switch -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"> -->
+
+</script>
+
+{% endblock body %}

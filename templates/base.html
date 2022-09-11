@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/index.css') }}">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        
+    <title>
+        {% block title %} Home {% endblock %} - Application
+    </title>
+</head>
+    
+<body>
+    <nav class="navbar navbar-expand-lg navbar-expand navbar-light bg-light fixed-top">
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn"   onclick="closeNav()">&times;</a>
+            
+            <a class="aa" href="login">Home</a>
+            <hr>
+            <a class="aa" href="login">Service</a>
+            <hr>
+            <a class="aa" href="login">Contact</a>
+            <hr>
+            <a class="aa" href="login">Newsletter</a>
+            <hr>
+            <a class="aa" href="login">Settings</a>
+            <hr>
+            <a class="aa" href="login">Sustainability</a>                
+        </div>
+
+
+        <a id="toggletag" onclick="openNav()" href="#">
+            <img src="static\images\menu.svg" alt="" width="24" height="17">
+        </a>
+        <div class="container-fluid">
+            <!-- Use any element to open the sidenav -->
+
+            <a class="navbar-brand" href="/">
+                <img src="static\images\hm.svg" alt="" width="40" height="26">
+            </a>
+
+
+            <span class="navbar-text">
+                {% if user == true %}
+                    <a class="navbar-brand" href="login">
+                        <img src="static\images\person.svg" alt="" width="24" height="24">
+                    </a>
+                    <a class="navbar-brand" href="info">
+                        <img src="static\images\message.svg" alt="" width="24" height="24">
+                    </a>
+                    <a class="navbar-brand" href="info">
+                        <img src="static\images\heart.svg" alt="" width="24" height="24">
+                    </a>
+                    <a class="navbar-brand" href="info">
+                        <img src="static\images\layout.png" alt="" width="24" height="24">
+                    </a>
+
+                    <a class="navbar-brand" onclick="togglePopup()">
+                        <img src="static\images\setting.svg" alt="" width="24" height="24">
+                    </a>
+                    
+                {% else %}
+                    <a class="navbar-brand" href="/">
+                        <img src="static\images\home2.svg" alt="" width="29" height="30">
+                    </a>
+                    <a class="navbar-brand" href="signup">
+                        <img src="static\images\person.svg" alt="" width="24" height="24">
+                    </a>
+                    <a class="navbar-brand" onclick="togglePopup()">
+                        <img src="static\images\setting.svg" alt="" width="24" height="24">
+                    </a>
+                    
+                {% endif %}
+                
+
+                <!-- pop up for setting button in nav -->
+                <div class="popup" id="popup-1">
+                    <div class="overlay"></div>
+                    {% if user == true %}
+                        <div class="content"  style="top: -30px;">
+                            <div class="close-btn" onclick="togglePopup()">
+                                &times;
+                            </div>
+                            <h1>Hi JATIN</h1>
+
+                            <div class="setdiv setdivvv" onclick="togglePopup()">
+                                <a class="" href="accsetting" style="text-decoration: none;">
+                                    <img src="static\images\setting.svg" alt="" width="24" height="24">
+                                    <span class="settings1">Account Settings</span>
+                                </a>
+                            </div>
+                            <hr>
+                            <div class="setdiv" onclick="togglePopup()">
+                                <a class=""  href="info" style="text-decoration: none;">
+                                    <img src="static\images\person.svg" alt="" width="24" height="24">
+                                    <span class="settings1">Membership</span>
+                                </a>
+                            </div>
+                            <hr>
+                            <div class="setdiv" onclick="togglePopup()">
+                                <a class=""  href="info" style="text-decoration: none;">
+                                    <img src="static\images\star.svg" alt="" width="24" height="24">
+                                    <span class="settings1">Rate & Review</span>
+                                </a>
+                            </div>
+                            <hr>
+                            <div class="setdiv"  onclick="togglePopup()">
+                                <a class=""  href="info" style="text-decoration: none;">
+                                    <img src="static\images\invite.svg" alt="" width="24" height="24">
+                                    <span class="settings1">Invite a Friend</span>
+                                </a>
+                            </div>
+                            <hr>
+                            <div class="setdiv" onclick="togglePopup()">
+                                <a class=""  href="info" style="text-decoration: none;">
+                                    <img src="static\images\heart.svg" alt="" width="24" height="24">
+                                    <span class="settings1">Your Collection</span>
+                                </a>
+                            </div>
+                            <hr>
+                            <div class="setdiv" onclick="togglePopup()">
+                                <a class=""  href="info" style="text-decoration: none;">
+                                    <img src="static\images\message.svg" alt="" width="24" height="24">
+                                    <span class="settings1">Contact Us</span>
+                                </a>
+                            </div>
+                            <hr>
+                            <div class="setdiv">
+                                <a class=""  href="signout" style="text-decoration: none;">
+                                    <img src="static\images\signout.svg" alt="" width="24" height="24">
+                                    <span class="settings1">Sign Out</span>
+                                </a>
+                            </div>
+                            
+                        </div>
+                        
+                    {% else %}
+                        <div class=" content contentauth"  style="top: -40px;" >
+                            <div class="close-btn" onclick="togglePopup()">
+                                &times;
+                            </div>
+                            <h1>Hi USER</h1>
+                            <br>
+                            <div class="setdiv" onclick="togglePopup()">
+                                <a class=""  href="info" style="text-decoration: none;">
+                                    <img src="static\images\person.svg" alt="" width="24" height="24">
+                                    <span class="settings1">Membership</span>
+                                </a>
+                            </div>
+                            <hr>
+                            <div class="setdiv"  onclick="togglePopup()">
+                                <a class=""  href="info" style="text-decoration: none;">
+                                    <img src="static\images\invite.svg" alt="" width="24" height="24">
+                                    <span class="settings1">Invite a Friend</span>
+                                </a>
+                            </div>
+                            <hr>
+                            <div class="setdiv">
+                                <a class=""  href="signout" style="text-decoration: none;">
+                                    <img src="static\images\signout.svg" alt="" width="24" height="24">
+                                    <span class="settings1">Login</span>
+                                </a>
+                            </div>
+                            <hr>
+                            <div class="setdiv">
+                                <a class=""  href="signup" style="text-decoration: none;">
+                                    <img src="static\images\signout.svg" alt="" width="24" height="24">
+                                    <span class="settings1">Become a Member</span>
+                                </a>
+                            </div>
+                            <hr>
+                            <div class="setdiv">
+                                <a class=""  href="info" style="text-decoration: none;">
+                                    <img src="static\images\signout.svg" alt="" width="24" height="24">
+                                    <span class="settings1">Contact</span>
+                                </a>
+                            </div>
+                            
+                        </div>
+                        
+                    {% endif %}
+                    <!-- pop up for updating acccount setting -->
+
+
+                </div>
+
+
+                <!-- pop up for updating acccount setting -->
+                <div class="popup" id="popup-2">
+                    <div class="overlay"></div>
+                    <div class="content content2">
+                        <div class="close-btn" onclick="togglePopup2()">
+                            &times;
+                        </div>
+                        <h1 style="background-color: rgb(216, 216, 216) ;">Hi JATIN</h1>
+
+                        <div class="container my-3">
+                            <form method="POST">
+                                
+                                <div class="form-group">
+                                    <label for="name">Full Name</label>
+                                    <input 
+                                    type="name" 
+                                    class="form-control my-2" 
+                                    id="name" 
+                                    name="name" 
+                                    placeholder="enter name"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Gender</label>
+                                    <select class="form-select form-control my-2" aria-label="Default select example" name="gender">
+                                        <option selected>Gender</option>
+                                        <option value="LGBTQ">LGBTQ+</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="number">Phone Number</label>
+                                    <input 
+                                        type="number" 
+                                        class="form-control my-2" 
+                                        id="email" 
+                                        name="phnumber" 
+                                        placeholder="enter phone number"/>
+                                </div>
+                                <div class="form-group my-3">
+                                    <label for="number">Pin Code</label>
+                                    <input 
+                                        type="number" 
+                                        class="form-control my-2" 
+                                        id="password" 
+                                        name="pin" 
+                                        placeholder="enter pin code"/>
+                                </div>
+                                <br>
+
+                                <div class="btndiv">
+                                    <button class="btn btn-dark" style="color: #fff !important;" > Update </button type="submit">
+                                </div>
+
+                            
+
+                            </form>
+                        </div>
+                        
+                    </div>
+                </div>
+    
+            
+            </span>
+
+
+        </div>
+    </nav>
+    
+
+    {% block body %}
+
+
+    
+    {% endblock body %}
+
+
+
+
+
+
+    <script>
+        function togglePopup(){
+            document.getElementById("popup-1").classList.toggle("active");
+        }
+
+    </script>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "395px";
+            document.getElementById("main").style.marginLeft = "250px";
+            // document.body.style.backgroundColor = "rgba(0,0,0,0.3)";
+        }
+        
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+            document.body.style.backgroundColor = "white";
+        }
+    </script>
+    <!-- MORE SCRIPTS
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></s>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script> -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

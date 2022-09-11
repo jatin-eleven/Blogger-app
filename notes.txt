@@ -1,0 +1,27 @@
+
+APP BLUEPRINT : 
+    - login/signup
+    - chatting
+    - blog post
+    - liked blogs
+    - setting
+    - Account
+    
+
+pyrebase install cmd : pip3 install pyrebase4
+
+
+heroku git:clone -a APP-NAME
+
+
+heroku deploy :
+    heroku login
+    git add .
+    git commit -am "make it better"
+    git push heroku master
+
+
+
+things to work on:
+    - error handling (exception)
+    
